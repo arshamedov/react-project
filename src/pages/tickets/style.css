@@ -1,0 +1,53 @@
+body {
+    font-family: 'Arial, sans-serif';
+    color: #333;
+    text-align: center;
+    padding: 0 20px;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.header {
+    background-color: #4CAF50;
+    padding: 10px 0;
+    color: white;
+}
+
+.main {
+    padding: 20px 0;
+}
+
+.canvas-container {
+    position: relative;
+}
+
+#gridCanvas {
+    border: 1px solid #ccc;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    visibility: hidden;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #4CAF50;
+}
+
+.footer {
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+}

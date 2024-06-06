@@ -5,9 +5,26 @@ body {
     padding: 0;
 }
 
+.events-container {
+    display: flex;
+    width: 100%;
+}
+
+.event-list {
+    width: 60%;
+}
+
+.selected-items {
+    width: 40%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    padding: 20px;
+}
 
 .event-category {
-    width: 80%;
+    width: 100%;
     background-color: #fff;
     margin: 20px 0;
     border-radius: 8px;
@@ -23,7 +40,8 @@ body {
     color: #2e7d32;
 }
 
-.event-item {
+.event-item,
+.selected-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,39 +49,60 @@ body {
     border-bottom: 1px solid #a5d6a7;
 }
 
-.event-item:last-child {
+.event-item:last-child,
+.selected-item:last-child {
     border-bottom: none;
 }
 
-.event-item img {
+.event-item img,
+.selected-item img {
     width: 100px;
     height: auto;
     border-radius: 8px;
     margin-right: 20px;
 }
 
-.event-item h3 {
+.event-item h3,
+.selected-item h3 {
     margin: 0;
     font-size: 1.2em;
     color: #388e3c;
 }
 
-.event-item p {
+.event-item p,
+.selected-item p {
     margin: 5px 0 0;
     color: #4caf50;
 }
 
-.event-item span {
+.event-item span,
+.selected-item span {
     color: #81c784;
     font-size: 0.9em;
 }
 
-.event-item>div {
+.event-item>div,
+.selected-item>div {
     display: flex;
     align-items: center;
 }
 
-.event-item>div>div {
+.event-item>div>div,
+.selected-item>div>div {
     display: flex;
     flex-direction: column;
+}
+
+button {
+    background-color: #66bb6a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #388e3c;
 }

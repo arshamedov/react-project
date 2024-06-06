@@ -1,6 +1,7 @@
 import { useRoutes } from "react-router-dom"
 import Home from "../pages/home"
 import Tickets from "../pages/tickets"
+import Events from "../pages/events"
 
 const MyRoutes = () => {
     return useRoutes([
@@ -11,6 +12,10 @@ const MyRoutes = () => {
         {
             path: 'tickets',
             element: <Tickets/>
+        },
+        {
+            path: 'events',
+            element: <Events/>
         },
         {
             path: '*',

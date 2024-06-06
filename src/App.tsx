@@ -1,16 +1,71 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import Layout from './components/Layout';
 import MyRoutes from './components/MyRoutes';
+import {Context} from './context'
+import { Movie, Theater } from './type';
 
-function App() {
+
+const App:React.FC = ():JSX.Element => {
+
+  const [movies, setMovies] = useState<Movie[]>([
+    {
+      id: 1,
+      name: 'Rush Hour',
+      category: 'comedy',
+      year: 2007,
+      img: 'images/movies/RushHour3.jpg'
+    },
+    {
+      id: 2,
+      name: 'The Equalizer',
+      category: 'action',
+      year: 2014,
+      img: 'images/movies/TheEqualizer.jpg'
+    },
+    {
+      id: 3,
+      name: 'Spider-Man',
+      category: 'Fantazy',
+      year: 2009,
+      img: 'images/movies/spider-man4.jpg'
+    },
+    {
+      id: 4,
+      name: 'Forrest Gump',
+      category: 'comedy',
+      year: 1994,
+      img: 'images/movies/ForrestGump.jpg'
+    },
+  ]);
+
+  const [theaters,setTheaters] = useState<Theater[]>([
+    {
+      id: 1,
+      name: 'presentation1',
+      img: 'images/theaters/nkar1.jpg'
+    },
+    {
+      id: 2,
+      name: 'presentation2',
+      img: 'images/theaters/nkar2.jpg'
+    },
+    {
+      id: 3,
+      name: 'presentation3',
+      img: 'images/theaters/nkar3.jpg'
+    }
+  ])
+
+
   return <div>
-    <BrowserRouter>
-      <Layout/>
-      <MyRoutes/>
-    </BrowserRouter>
+    <Context.Provider value={{movies, theaters}}>
+      <BrowserRouter>
+        <Layout/>
+        <MyRoutes/>
+      </BrowserRouter>
+    </Context.Provider>
   </div>
 }
 
